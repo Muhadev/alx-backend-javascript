@@ -2,6 +2,7 @@
   "name": "your-project-name",
   "version": "1.0.0",
   "description": "Your project description",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "lint": "eslint"

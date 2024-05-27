@@ -1,14 +1,11 @@
 export default function taskBlock(trueOrFalse) {
-  const task = false;
-  const task2 = true;
-
-  let taskResult = task;
-  let task2Result = task2;
-
-  if (trueOrFalse) {
-    taskResult = true;
-    task2Result = false;
+    var task = false;
+    var task2 = true;
+  
+    if (trueOrFalse) {
+    //   var task = true;
+    //   var task2 = false;
+    }
+  
+    return [task, task2];
   }
-
-  return [taskResult, task2Result];
-}

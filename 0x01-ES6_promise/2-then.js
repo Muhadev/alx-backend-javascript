@@ -1,14 +1,15 @@
 function handleResponseFromAPI(promise) {
-  promise
+  return promise
     .then(() => {
-      // eslint-disable-next-line no-console
       console.log('Got a response from the API');
       return { status: 200, body: 'success' };
     })
     .catch(() => {
-      // eslint-disable-next-line no-console
       console.log('Got a response from the API');
-      return new Error();
+      throw new Error();
+    })
+    .finally(() => {
+     console.log('Request completed');
     });
-}
+  }
 export default handleResponseFromAPI;

@@ -3,7 +3,6 @@ class HolbertonCourse {
     this._validateString(name, 'Name must be a string');
     this._validateNumber(length, 'Length must be a number');
     this._validateArray(students, 'Students must be an array of strings');
-
     this._name = name;
     this._length = length;
     this._students = students;

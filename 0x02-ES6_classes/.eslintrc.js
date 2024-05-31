@@ -4,17 +4,22 @@ module.exports = {
       es2021: true,
     },
     extends: 'airbnb-base',
-    overrides: [],
+    overrides: [
+      {
+        files: ["*.js"],
+        excludedFiles: "babel.config.js",
+      },
+    ],
     parserOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
     rules: {
-      'linebreak-style': ['error', 'unix'],
-      indent: ['error', 2],
-      'no-trailing-spaces': 'error',
-      'no-multiple-empty-lines': ['error', { max: 0 }],
-      'eol-last': ['error', 'always'],
+      "max-classes-per-file": "off",
+      "no-underscore-dangle": "off",
+      "no-console": "off",
+      "no-shadow": "off",
+      "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
     },
   };
   

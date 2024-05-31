@@ -33,22 +33,16 @@ class HolbertonCourse {
   get length() {
     return this._length;
   }
-  
   set length(value) {
     this._validateNumber(value, 'Length must be a number');
-      this._length = value;
-    }
-  
-    // Getter and Setter for students
-    get students() {
-      return this._students;
-    }
-  
-    set students(value) {
-      this._validateArray(value, 'Students must be an array of strings');
-      this._students = value;
-    }
+    this._length = value;
   }
-  
-  export default HolbertonCourse;
-  
+  get students() {
+    return this._students;
+  }
+  set students(value) {
+    this._validateArray(value, 'Students must be an array of strings');
+    this._students = value;
+  }
+}
+export default HolbertonCourse;

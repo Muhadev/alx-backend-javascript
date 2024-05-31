@@ -1,17 +1,59 @@
-class Building {
-  constructor(sqft) {
-    if (new.target === Building) {
-      throw new Error('Building is an abstract class and cannot be instantiated directly');
+import Currency from './3-currency';
+
+class Pricing {
+  constructor(amount, currency) {
+    this.amount = amount;
+    this.currency = currency;
+  }
+
+  /**
+   * @param {Number} amount
+   */
+  set amount(amount) {
+    if (typeof amount !== 'number') {
+      throw new TypeError('Amount must be a Number');
     }
-    this._sqft = sqft;
+    this._amount = amount;
   }
 
-  get sqft() {
-    return this._sqft;
+  get amount() {
+    return this._amount;
   }
 
-  evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+  /**
+   * @param {Currency} currency
+   */
+  set currency(currency) {
+    if (currency instanceof Currency) {
+      this._currency = currency;
+    } else {
+      throw new TypeError('currency must be an instance of Currency');
+    }
+  }
+
+  get currency() {
+    return this._currency;
+  }
+
+  displayFullPrice() {
+    return `${this.amount} ${this.currency.displayFullCurrency()}`;
+  }
+
+  /**
+   * @param {Number} amount
+   * @param {Number} conversionRate
+   */
+  static convertPrice(amount, conversionRate) {
+    if (typeof amount !== 'number') {
+      throw new TypeError('amount must be a number');
+    }
+
+    if (typeof conversionRate !== 'number') {
+      throw new TypeError('conversionRate must be a number');
+    }
+
+    return amount * conversionRate;
   }
 }
-export default Building;
+
+export default Pricing;

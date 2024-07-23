@@ -4,7 +4,7 @@
  * author Muhammed Olamilekan <https://github.Muhadev>
  */
 const displayMessage = (msg) => {
-    console.log(msg);
-  };
-  
+  console.log(msg);
+};
+
 module.exports = displayMessage;

@@ -3,7 +3,8 @@
  * param {String} msg The message to display.
  * author Muhammed Olamilekan <https://github.Muhadev>
  */
-function displayMessage(message) {
-  console.log(message);
-}
+const displayMessage = (msg) => {
+    console.log(msg);
+  };
+  
 module.exports = displayMessage;

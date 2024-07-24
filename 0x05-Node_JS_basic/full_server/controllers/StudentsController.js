@@ -10,11 +10,7 @@ class StudentsController {
 
         fields.forEach((field) => {
           const list = students[field];
-          responseParts.push(
-            `Number of students in ${field}: ${list.length}. ` +
-            `List: ${list.join(', ')}`
-          );
-          
+          responseParts.push(`Number of students in ${field}: ${list.length}. List: ${list.join(', ')}`);
         });
 
         res.status(200).send(responseParts.join('\n'));
